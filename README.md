@@ -1,9 +1,20 @@
 # inference-labs
 
+[![CI](https://github.com/bosslesss/inference-labs-python/actions/workflows/ci.yml/badge.svg)](https://github.com/bosslesss/inference-labs-python/actions/workflows/ci.yml)
+[![GitHub release](https://img.shields.io/github/v/release/bosslesss/inference-labs-python)](https://github.com/bosslesss/inference-labs-python/releases)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/python-3.9%2B-blue)](https://pypi.org/project/inference-labs/)
+
 Official Python client for [Inference Labs](https://inference-labs.com) — a vendor-neutral router for the major cloud LLMs (OpenAI / Azure / Anthropic / Google / AWS Bedrock / RunwayML). One endpoint, one billing surface, automatic failover, semantic caching, and policy-driven model selection (`cost-first`, `quality-first`, `latency-first`, `balanced`, `judge`).
 
 ```bash
 pip install inference-labs
+```
+
+Or install the current release directly from GitHub (no PyPI account needed by us — works today):
+
+```bash
+pip install https://github.com/bosslesss/inference-labs-python/releases/download/v0.1.0/inference_labs-0.1.0-py3-none-any.whl
 ```
 
 Optional LangChain integration:
