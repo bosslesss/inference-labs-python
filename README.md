@@ -8,10 +8,12 @@
 Official Python client for [Inference Labs](https://inference-labs.com) — a vendor-neutral router for the major cloud LLMs (OpenAI / Azure / Anthropic / Google / AWS Bedrock / RunwayML). One endpoint, one billing surface, automatic failover, semantic caching, and policy-driven model selection (`cost-first`, `quality-first`, `latency-first`, `balanced`, `judge`).
 
 ```bash
-pip install inference-labs
+pip install --extra-index-url https://inference-labs.com/pypi/simple/ inference-labs
 ```
 
-Or install the current release directly from GitHub (no PyPI account needed by us — works today):
+That's a [PEP 503](https://peps.python.org/pep-0503/) index we host ourselves; dependencies still come from the official PyPI. (We don't publish to the public PyPI index because their account signup is gated by a captcha that an automated release pipeline can't solve.)
+
+Or pin an exact release straight from GitHub:
 
 ```bash
 pip install https://github.com/bosslesss/inference-labs-python/releases/download/v0.1.0/inference_labs-0.1.0-py3-none-any.whl
