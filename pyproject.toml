@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "inference-labs"
+version = "0.1.0"
+description = "Official Python client for Inference Labs -- vendor-neutral multi-model AI routing, cost optimization, and evaluation."
+readme = "README.md"
+authors = [{ name = "Inference Labs", email = "hello@inference-labs.com" }]
+license = { text = "Apache-2.0" }
+requires-python = ">=3.9"
+keywords = ["llm", "openai", "anthropic", "claude", "gemini", "router", "ai", "inference", "openrouter-alternative"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+  "httpx>=0.24,<1.0",
+]
+
+[project.optional-dependencies]
+langchain = ["langchain-core>=0.3,<1.0"]
+test = ["pytest>=7", "pytest-httpx>=0.30"]
+
+[project.urls]
+Homepage = "https://inference-labs.com"
+Documentation = "https://inference-labs.com/#how-it-works"
+Source = "https://github.com/bosslesss/InferenceLabs/tree/main/sdk/python"
+Issues = "https://github.com/bosslesss/InferenceLabs/issues"
+
+[tool.setuptools.packages.find]
+include = ["inference_labs*"]
