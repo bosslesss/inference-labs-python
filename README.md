@@ -19,10 +19,11 @@ Or pin an exact release straight from GitHub:
 pip install https://github.com/bosslesss/inference-labs-python/releases/download/v0.1.0/inference_labs-0.1.0-py3-none-any.whl
 ```
 
-Optional LangChain integration:
+Optional framework integrations:
 
 ```bash
-pip install "inference-labs[langchain]"
+pip install "inference-labs[langchain]"      # ChatInferenceLabs
+pip install "inference-labs[llamaindex]"     # InferenceLabsLLM (CustomLLM)
 ```
 
 ## Quickstart
@@ -80,6 +81,22 @@ resp = llm.invoke([
 ])
 print(resp.content)
 print(resp.additional_kwargs)   # -> model, provider, cost_usd, latency_ms, cached, trace_id
+```
+
+## LlamaIndex
+
+```python
+from inference_labs.llamaindex import InferenceLabsLLM
+from llama_index.core import Settings
+
+Settings.llm = InferenceLabsLLM(
+    api_key="il_live_...",
+    strategy="balanced",
+    max_cost_usd=0.01,
+)
+
+# Every LlamaIndex pipeline using Settings.llm now routes via Inference Labs.
+# The chosen model id surfaces in response.additional_kwargs['model'].
 ```
 
 ## Routing options

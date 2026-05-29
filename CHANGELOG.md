@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.1 — 2026-05-29
+
+- New: LlamaIndex integration via `inference_labs.llamaindex.InferenceLabsLLM` (extra `pip install "inference-labs[llamaindex]"`). Implements `CustomLLM` with sync + async + streaming for both `complete()` and `chat()`, exposing the chosen router model in `response.additional_kwargs`.
+
 ## 0.1.0 — 2026-05-27
 
 Initial release.

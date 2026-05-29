@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "inference-labs"
-version = "0.1.0"
+version = "0.1.1"
 description = "Official Python client for Inference Labs -- vendor-neutral multi-model AI routing, cost optimization, and evaluation."
 readme = "README.md"
 authors = [{ name = "Inference Labs", email = "hello@inference-labs.com" }]
@@ -28,6 +28,7 @@ dependencies = [
 
 [project.optional-dependencies]
 langchain = ["langchain-core>=0.3,<1.0"]
+llamaindex = ["llama-index-core>=0.10,<0.15"]
 test = ["pytest>=7", "pytest-httpx>=0.30"]
 
 [project.urls]
